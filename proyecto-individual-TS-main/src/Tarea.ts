@@ -1,49 +1,59 @@
-class Tarea { 
+
+
+export class Tarea {
+    completada(completada: any) {
+        throw new Error("Method not implemented.");
+    } 
     private id: number;
     private descripcion: string;
     private estado: boolean;
     private titulo: string;
+    private tiempo: number;
 
-    constructor(id: number, descripcion: string, estado: boolean, titulo: string) {
+    constructor(id: number, descripcion: string, estado: boolean, titulo: string, tiempo: number) {
         this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
         this.titulo = titulo;
+        this.tiempo = tiempo;
     }
 
 //Getters para acceder a los atributos de la tarea
 
-get Id(): number {
+public getId(): number {
         return this.id;
     }
 
-get Descripcion(): string {
+public getDescripcion(): string {
         return this.descripcion;
     }
 
-get Estado(): boolean {
+public getEstado(): boolean {
         return this.estado;
     }
 
-get Titulo(): string {
+public getTitulo(): string {
         return this.titulo;
     }
+public getTiempo(): number {
+        return this.tiempo;
+}
 
 //Setters para modificar los atributos de la tarea
 
-setId(id: number): void {
+public setId(id: number): void {
         this.id = id;
     }
 
-setDescripcion(descripcion: string): void {
+public setDescripcion(descripcion: string): void {
         this.descripcion = descripcion;
     }
 
-setEstado(estado: boolean): void {
+public setEstado(estado: boolean): void {
     this.estado = estado;
     }   
 
-setTitulo(titulo: string): void {
+public setTitulo(titulo: string): void {
     this.titulo = titulo;
     }  
 
@@ -56,11 +66,12 @@ public crearTarea(id: number, descripcion: string, estado: boolean, titulo: stri
     this.titulo = titulo;
 }
 
-public modificarTarea(id: number, descripcion: string, estado: boolean, titulo: string): void {
+public modificarTarea(id: number, descripcion: string, estado: boolean, titulo: string, tiempo: number): void {
     this.id = id;
     this.descripcion = descripcion;
     this.estado = estado;
     this.titulo = titulo;
+    this.tiempo = tiempo;
 }
 
 public marcarTareaCompletada(): void {

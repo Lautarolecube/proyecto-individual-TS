@@ -1,6 +1,6 @@
-import { Tarea } from "./Tarea";
+import {Tarea} from "./Tarea";
 
-class ManagerTarea {
+export class ManagerTarea {
     private tareas: Tarea[];
 
     constructor() {
