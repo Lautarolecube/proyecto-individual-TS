@@ -9,4 +9,13 @@ describe("Tarea", () => {
   });
 });
 
+describe("Tarea", () => {
+  it("tendrías que realizar los test para cada clase", () => {
+    const newtask = new Tarea(2, "Realizar los tests utilizando TypeScript", false, "Estudio POO con TS", 0);
+
+    expect(newtask).toBeDefined();
+  });
+});
+
+
 

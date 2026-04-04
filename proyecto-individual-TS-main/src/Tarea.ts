@@ -1,9 +1,9 @@
-
+//src/Tarea.ts
 
 export class Tarea {
-    completada(completada: any) {
-        throw new Error("Method not implemented.");
-    } 
+
+//Atributos
+
     private id: number;
     private descripcion: string;
     private estado: boolean;
@@ -19,6 +19,11 @@ export class Tarea {
     }
 
 //Getters para acceder a los atributos de la tarea
+
+public getTarea(): Tarea {
+        return this.getTarea();
+}
+
 
 public getId(): number {
         return this.id;
