@@ -42,13 +42,27 @@ public obtenerTareaId(id: number): Tarea {
     return tarea;
 }
 
+//Métodos
+
 public tareaDuplicada(id: number, titulo: string): void {
-        const tareaDuplicada = this.tareas.find(t => t.getId() === this.tareas.getId());
+        const tareaDuplicada = this.tareas.find(
+            (t) => t.getId() === id && t.getTitulo() === titulo
+        );
 
         if (tareaDuplicada) {
     throw new Error(`Tarea duplicada con id ${tareaDuplicada.getId()}`);
+    }
 }
-} 
+
+
+public cargarTiempo(id: number, tiempo: number): void {
+    const tarea = this.obtenerTareaId(id);
+    tarea.setTiempo(tiempo);
+}
+
+
+
+
 
 
 }

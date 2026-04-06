@@ -60,7 +60,11 @@ public setEstado(estado: boolean): void {
 
 public setTitulo(titulo: string): void {
     this.titulo = titulo;
-    }  
+    }
+
+public setTiempo(tiempo: number): void {
+    this.tiempo = tiempo;
+}
 
 //Métodos
 
@@ -79,8 +83,29 @@ public modificarTarea(id: number, descripcion: string, estado: boolean, titulo: 
     this.tiempo = tiempo;
 }
 
+public tareaPendiente(): boolean {
+    return this.estado === false;
+}
+
+public tareaEnProgreso(): boolean {
+    return this.estado === true;
+}
+
+public tareaCompletada(): boolean {
+    return this.estado === true;
+}
+
 public marcarTareaCompletada(): void {
     this.estado = true;
+}
+
+
+public marcarTareaEnProgreso(): void {
+    this.estado = true;
+}
+
+public marcarTareaPendiente(): void {
+    this.estado === false;
 }
 
 }

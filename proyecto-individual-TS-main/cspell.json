@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en,es",
+  "words": [
+    "Tiempo",
+    "tiempo",
+    "Tarea",
+    "tarea",
+    "descripcion",
+    "titulo",
+    "obtener",
+    "listar",
+    "agregar",
+    "eliminar",
+    "duplicada",
+    "marcar",
+    "completada",
+    "pendiente",
+    "ManagerTarea",
+    "cargarTiempo"
+  ]
+}
