@@ -1,5 +1,7 @@
 //src/Tarea.ts
 
+import { User } from "./Usuario";
+
 export class Tarea {
 
 //Atributos
@@ -9,21 +11,22 @@ export class Tarea {
     private estado: boolean;
     private titulo: string;
     private tiempo: number;
+    private responsable: User | null;
 
-    constructor(id: number, descripcion: string, estado: boolean, titulo: string, tiempo: number) {
+    constructor(id: number,descripcion: string,estado: boolean,titulo: string,tiempo: number,responsable: User | null = null) {
         this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
         this.titulo = titulo;
         this.tiempo = tiempo;
+        this.responsable = responsable;
     }
 
 //Getters para acceder a los atributos de la tarea
 
 public getTarea(): Tarea {
-        return this.getTarea();
+        return this;
 }
-
 
 public getId(): number {
         return this.id;
@@ -42,6 +45,10 @@ public getTitulo(): string {
     }
 public getTiempo(): number {
         return this.tiempo;
+    }
+
+public getResponsable(): User | null {
+        return this.responsable;
 }
 
 //Setters para modificar los atributos de la tarea
@@ -64,6 +71,10 @@ public setTitulo(titulo: string): void {
 
 public setTiempo(tiempo: number): void {
     this.tiempo = tiempo;
+}
+
+public setResponsable(usuario: User | null): void {
+    this.responsable = usuario;
 }
 
 //Métodos
@@ -105,7 +116,7 @@ public marcarTareaEnProgreso(): void {
 }
 
 public marcarTareaPendiente(): void {
-    this.estado === false;
+    this.estado = false;
 }
 
 }

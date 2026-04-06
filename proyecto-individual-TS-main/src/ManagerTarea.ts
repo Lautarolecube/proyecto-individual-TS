@@ -1,7 +1,7 @@
 //src/ManagerTarea.ts
 
-import {Tarea} from "./Tarea";
-import {Board} from "./Board";
+import { Tarea } from "./Tarea";
+import { User } from "./Usuario";
 
 export class ManagerTarea {
     private tareas: Tarea[];
@@ -23,7 +23,7 @@ public eliminarTarea(id: number, titulo: string): void {
         this.tareas = this.tareas.filter(tarea => !(tarea.getId() === id && tarea.getTitulo() === titulo));
 
         if(this.tareas.length === cantidad){
-            throw new Error('Task with id ${id} not found');
+            throw new Error(`Task with id ${id} not found`);
         }
 
     }
@@ -60,9 +60,31 @@ public cargarTiempo(id: number, tiempo: number): void {
     tarea.setTiempo(tiempo);
 }
 
+/** Indica si existe una tarea con el id dado. */
+public validarTareaPorId(id: number): boolean {
+    return this.tareas.some((t) => t.getId() === id);
+}
 
+/**
+ * Busca tareas cuyo título o descripción contengan el texto (sin distinguir mayúsculas).
+ * Si el texto está vacío, devuelve una copia de todas las tareas.
+ */
+public buscarTareasPorTexto(texto: string): Tarea[] {
+    const q = texto.trim().toLowerCase();
+    if (q === "") {
+        return [...this.tareas];
+    }
+    return this.tareas.filter(
+        (t) =>
+            t.getTitulo().toLowerCase().includes(q) ||
+            t.getDescripcion().toLowerCase().includes(q)
+    );
+}
 
-
-
+/** Asigna un usuario responsable a la tarea identificada por id. */
+public asignarResponsable(idTarea: number, usuario: User): void {
+    const tarea = this.obtenerTareaId(idTarea);
+    tarea.setResponsable(usuario);
+}
 
 }
