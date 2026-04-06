@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+
+# Configuración local del editor (no versionar)
+.cursor/
