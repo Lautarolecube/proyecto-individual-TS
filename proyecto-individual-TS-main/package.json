@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-individual-ts",
+  "version": "1.0.0",
+  "description": "Proyecto individual en TypeScript con POO y tests unitarios con Vitest",
+  "main": "dist/master.js",
+  "scripts": {
+    "dev": "ts-node master.ts",
+    "build": "tsc",
+    "start": "node dist/master.js",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": ["typescript", "vitest", "poo", "testing"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@vitest/coverage-v8": "^4.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  }
+}

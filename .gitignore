@@ -2,5 +2,6 @@ node_modules/
 dist/
 coverage/
 
-# Configuración local del editor (no versionar)
+# Editor / IDE local (no subir configuración del entorno)
+.cursor/
 .cursor/
