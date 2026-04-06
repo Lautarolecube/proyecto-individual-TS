@@ -13,11 +13,11 @@ constructor (name: string, password: string){
 
 //Getters
 
-private getName(){
+public getName(): string {
     return this.name;
 }
 
-private getPassword(){
+public getPassword(): string {
     return this.password;
 }
 
@@ -38,6 +38,25 @@ public newUser(name: string, password: string): User {
     return user;
 }
 
+public login(name: string, password: string): boolean {
+    if(this.name === name && this.password === password){
+        return true;
+    }
+    return false;
+}
+
+public logout(): void {
+    this.name = "";
+    this.password = "";
+}
+
+public changePassword(newPassword: string): void {
+    this.password = newPassword;
+}
+
+public changeName(newName: string): void {
+    this.name = newName;
+}
 
 
 }
